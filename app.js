@@ -24,7 +24,7 @@ app.post('/', function(req,res){
         const temp =weather.main.temp
         res.write("<h1> the description goes here :" + description + "</h1>")
 
-        res.write("<p>hello here i got the temp of :" + query + "</p> " + temp )
+        res.write("<p>hello here i got the temp of  :" + query + "</p> " + temp )
 
         res.write("<img src="+ imagurl+ ">")
         })
