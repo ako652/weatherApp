@@ -9,7 +9,8 @@ app.get('/', function(req,res){
 res.sendFile(__dirname + '/index.html')
 })
 app.post('/', function(req,res){
-    const query=req.body.cityname
+    try {
+           const query=req.body.cityname
     let url ="https://api.openweathermap.org/data/2.5/weather?q=" + query + "&appid=17df774ad23662e9e57785cb6b06f16a&units=metric"
 
     https.get(url,function(response){
@@ -29,6 +30,12 @@ app.post('/', function(req,res){
         res.write("<img src="+ imagurl+ ">")
         })
     })
+        
+    } catch (error) {
+        console.log(error)
+        
+    }
+ 
 })
 
 app.listen(80, function(){
